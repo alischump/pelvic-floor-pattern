@@ -893,7 +893,6 @@ async function submitResults() {
   // ── 2. Send branded HTML results email via EmailJS ────────────
   if (EMAILJS_PUBLIC_KEY) {
     try {
-      emailjs.init(EMAILJS_PUBLIC_KEY);
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
         to_email:       email,
         to_name:        firstName,
@@ -1060,6 +1059,9 @@ function restartQuiz() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init('i0YzcMTiQd_8foG60');
+</script>
 </body>
 </html>
